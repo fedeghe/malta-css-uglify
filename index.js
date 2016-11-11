@@ -8,7 +8,7 @@ function malta_css_uglify(o, options) {
 
 	var self = this,
 		start = new Date(),
-		msg;
+		msg = "";
 
 	options = options || {};
 	options.maxLineLen = options.maxLineLen || 500;
