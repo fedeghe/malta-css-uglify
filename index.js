@@ -16,8 +16,6 @@ function malta_css_uglify(o, options) {
 	options.uglyComments = options.uglyComments || false;
 	options.cuteComments = options.cuteComments || true;
 
-	o.name = o.name.replace(/\.css$/, '.min.css');
-
 	o.content = uglify_css.processString(o.content, options);
 
 	return function (solve, reject){
