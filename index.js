@@ -21,7 +21,7 @@ function malta_css_uglify(o, options) {
 	return function (solve, reject){
 		fs.writeFile(o.name, o.content, function(err) {
 			if (err == null) {
-				msg = 'plugin malta-css-uglify wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
+				msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
 			} else {
 				console.log('[ERROR] uglifycss says:');
 				console.dir(err);
