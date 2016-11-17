@@ -8,25 +8,29 @@ function malta_css_uglify(o, options) {
 
 	var self = this,
 		start = new Date(),
-		msg = "";
+		msg = "",
+		pluginName = path.basename(path.dirname(__filename)),
+		doErr = function (e) {
+			console.log(('[ERROR on ' + o.name + ' using ' + pluginName + '] :').red());
+			console.dir(e);
+			self.stop();
+		};
 
 	options = options || {};
 	options.maxLineLen = options.maxLineLen || 500;
 	options.expandVars = options.expandVars || true;
 	options.uglyComments = options.uglyComments || false;
 	options.cuteComments = options.cuteComments || true;
-
-	o.content = uglify_css.processString(o.content, options);
+	try{
+		o.content = uglify_css.processString(o.content, options);
+	} catch(err) {
+		doErr(err);
+	}
 
 	return function (solve, reject){
 		fs.writeFile(o.name, o.content, function(err) {
-			if (err == null) {
-				msg = 'plugin ' + path.basename(path.dirname(__filename)).white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
-			} else {
-				console.log('[ERROR] uglifycss says:');
-				console.dir(err);
-				self.stop();
-			}
+			err && doErr(err);
+			msg = 'plugin ' + pluginName.white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
 			solve(o);
 			self.notifyAndUnlock(start, msg);
 		});	
