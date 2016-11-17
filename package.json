@@ -1,6 +1,6 @@
 {
   "name": "malta-css-uglify",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Malta plugin to uglify css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
