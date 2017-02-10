@@ -3,27 +3,28 @@ This plugin can be used on: **.css** files and on **.less** and **.scss** files 
 Options : all options of the [uglifycss package](https://www.npmjs.com/package/uglifycss)
 
 Sample usage:  
-
-    malta app/source/style.css public/css -plugins=malta-css-uglify[maxLineLen:100,uglyComments:true]
-
+```
+malta app/source/style.css public/css -plugins=malta-css-uglify[maxLineLen:100,uglyComments:true]
+```
 or in the .json file :
-
-    "app/source/style.css" : "public/css -plugins=malta-css-uglify",
-    "app/source/hi.less" : "public/css -plugins=malta-less...malta-css-uglify",
-    "app/source/app.scss" : "public/css -plugins=malta-sass...malta-css-uglify"
-
+```
+"app/source/style.css" : "public/css -plugins=malta-css-uglify",
+"app/source/hi.less" : "public/css -plugins=malta-less...malta-css-uglify",
+"app/source/app.scss" : "public/css -plugins=malta-sass...malta-css-uglify"
+```
 or in a script : 
-
-    var Malta = require('malta');
-    Malta.get().check([
-        'app/source/style.css',
-        'public/css',
-        '-plugins=malta-coffeescript',
-        '-options=showPath:false,watchInterval:500,verbose:0'
-        ]).start(function (o) {
-            var s = this;
-            console.log('name : ' + o.name)
-            console.log("content : \n" + o.content);
-            'plugin' in o && console.log("plugin : " + o.plugin);
-            console.log('=========');
-        });
+``` js
+var Malta = require('malta');
+Malta.get().check([
+    'app/source/style.css',
+    'public/css',
+    '-plugins=malta-coffeescript',
+    '-options=showPath:false,watchInterval:500,verbose:0'
+    ]).start(function (o) {
+        var s = this;
+        console.log('name : ' + o.name)
+        console.log("content : \n" + o.content);
+        'plugin' in o && console.log("plugin : " + o.plugin);
+        console.log('=========');
+    });
+```
