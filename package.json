@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "uglifycss": "0.0.25",
-    "malta": ">=3.0.0"
+    "malta": ">=3.4.0"
   },
   "main": "./index.js"
 }
