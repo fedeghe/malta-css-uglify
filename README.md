@@ -1,3 +1,10 @@
+---
+[![npm version](https://badge.fury.io/js/malta-css-uglify.svg)](http://badge.fury.io/js/malta-css-uglify)
+[![Dependencies](https://david-dm.org/fedeghe/malta-css-uglify.svg)](https://david-dm.org/fedeghe/malta-css-uglify)
+[![npm downloads](https://img.shields.io/npm/dt/malta-css-uglify.svg)](https://npmjs.org/package/malta-css-uglify)
+[![npm downloads](https://img.shields.io/npm/dm/malta-css-uglify.svg)](https://npmjs.org/package/malta-css-uglify)  
+---  
+
 This plugin can be used on: **.css** files and on **.less** and **.scss** files after using the right plugin  
 
 Options : all options of the [uglifycss package](https://www.npmjs.com/package/uglifycss)
