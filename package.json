@@ -1,6 +1,6 @@
 {
   "name": "malta-css-uglify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Malta plugin to uglify css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,8 +21,8 @@
     "url": "https://github.com/fedeghe/malta-css-uglify/issues"
   },
   "dependencies": {
-    "uglifycss": "0.0.25",
-    "malta": ">=3.8.14"
+    "malta": ">=3.8.14",
+    "uglifycss": "0.0.25"
   },
   "main": "./index.js"
 }
