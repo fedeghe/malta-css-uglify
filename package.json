@@ -21,8 +21,7 @@
         "url": "https://github.com/fedeghe/malta-css-uglify/issues"
     },
     "dependencies": {
-        "malta": "^4.0.4",
-        "uglifycss": "0.0.25"
+        "uglifycss": "0.0.29"
     },
     "main": "./index.js"
 }

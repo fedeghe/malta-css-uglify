@@ -1,15 +1,14 @@
-require('malta').checkDeps('uglifycss');
-
-var uglify_css = require("uglifycss"),
+const uglify_css = require("uglifycss"),
     path = require('path'),
     fs = require('fs');
 
 function malta_css_uglify(o, options) {
 
-    var self = this,
+    const self = this,
         start = new Date(),
-        msg = "",
         pluginName = path.basename(path.dirname(__filename));
+        
+    let msg = "";
 
     options = options || {};
     options.maxLineLen = options.maxLineLen || 500;
@@ -23,8 +22,8 @@ function malta_css_uglify(o, options) {
         self.doErr(err, o, pluginName);
     }
 
-    return function (solve, reject) {
-        fs.writeFile(o.name, o.content, function (err) {
+    return (solve, reject) => {
+        fs.writeFile(o.name, o.content,  err => {
             err && self.doErr(err, o, pluginName);
             msg = 'plugin ' + pluginName.white() + ' wrote ' + o.name + ' (' + self.getSize(o.name) + ')';
             err
